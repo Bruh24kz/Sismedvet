@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos - Med Vet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .form-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .calendar {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content container">
+            <div class="logo">
+                <i class="fa-solid fa-paw"></i>
+                <div>
+                    <h1>Med Vet</h1>
+                    <p>Clínica Veterinária</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="index.html">Início</a>
+                <a href="serviços.html">Serviços</a>
+                <a href="agendamentos.html">Agendamentos</a>
+                <a href="vendas.html">Promoções</a>
+                <a href="consultavenda.html">Produtos</a>
+            </div>
+            
+            <a href="index.html#contato" class="btn btn-primary">
+                <i class="fa-solid fa-phone"></i> (11) 99999-9999
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="height: 60vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/201/1920/1080');">
+        <div class="hero-content container" style="text-align: center;">
+            <h2 style="font-size: 3.8rem;">Agende sua Consulta</h2>
+            <p style="font-size: 1.5rem; max-width: 700px; margin: 0 auto;">
+                Escolha o melhor dia e horário para cuidar da saúde do seu pet
+            </p>
+        </div>
+    </section>
+
+    <div class="section container">
+
+        <div class="form-container p-10 md:p-16">
+            <h2 class="text-3xl font-bold text-center text-emerald-700 mb-10">Formulário de Agendamento</h2>
+
+            <form id="agendamentoForm">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Nome do Tutor *</label>
+                        <input type="text" required class="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Telefone / WhatsApp *</label>
+                        <input type="tel" required class="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500" placeholder="(11) 99999-9999">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Nome do Pet *</label>
+                        <input type="text" required class="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Espécie / Raça</label>
+                        <input type="text" class="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500" placeholder="Ex: Cão - Golden Retriever">
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-sm font-medium mb-2">Tipo de Atendimento *</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <label class="flex items-center gap-2 border border-gray-300 p-4 rounded-2xl cursor-pointer hover:border-emerald-500">
+                            <input type="radio" name="tipo" value="consulta" checked>
+                            <span>Consulta Geral</span>
+                        </label>
+                        <label class="flex items-center gap-2 border border-gray-300 p-4 rounded-2xl cursor-pointer hover:border-emerald-500">
+                            <input type="radio" name="tipo" value="vacina">
+                            <span>Vacinação</span>
+                        </label>
+                        <label class="flex items-center gap-2 border border-gray-300 p-4 rounded-2xl cursor-pointer hover:border-emerald-500">
+                            <input type="radio" name="tipo" value="cirurgia">
+                            <span>Cirurgia</span>
+                        </label>
+                        <label class="flex items-center gap-2 border border-gray-300 p-4 rounded-2xl cursor-pointer hover:border-emerald-500">
+                            <input type="radio" name="tipo" value="exame">
+                            <span>Exame</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Data Preferida *</label>
+                        <input type="date" required class="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Horário Preferido *</label>
+                        <select required class="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+                            <option value="">Selecione um horário</option>
+                            <option>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-sm font-medium mb-2">Descreva o motivo da consulta</label>
+                    <textarea rows="5" class="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500" placeholder="Ex: O pet está tossindo, com diarreia, para vacinar..."></textarea>
+                </div>
+
+                <button type="button" onclick="enviarAgendamento()" class="w-full mt-10 bg-emerald-600 hover:bg-emerald-700 text-white py-6 text-xl font-semibold rounded-3xl transition">
+                    <i class="fa-solid fa-calendar-check"></i> Confirmar Agendamento
+                </button>
+            </form>
+        </div>
+
+        <!-- Informações -->
+        <div class="max-w-3xl mx-auto mt-16 text-center">
+            <p class="text-gray-600">⏰ Atendemos de <strong>Segunda a Sexta</strong>: 08h às 20h | <strong>Sábado</strong>: 08h às 14h</p>
+            <p class="text-emerald-600 font-medium mt-3">Emergências 24h • (11) 98888-7777</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Med Vet Clínica Veterinária - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function enviarAgendamento() {
+            const form = document.getElementById('agendamentoForm');
+            if (form.checkValidity()) {
+                alert("✅ Agendamento realizado com sucesso!\n\nObrigado! Entraremos em contato via WhatsApp em até 30 minutos para confirmar.");
+            } else {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            }
+        }
+    </script>
+</body>
+</html>
