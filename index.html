@@ -4,184 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Med Vet - Clínica Veterinária</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/id/1015/1920/1080');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-
-        .pet-bg {
-            background-image: url('<!-- Copie e cole este código no seu index.html ou página desejada -->
-
-<div style="text-align: center; margin: 30px 0;">
-    <img src="https://picsum.photos/id/1015/800/500" alt="Med Vet Clínica Veterinária" style="max-width: 100%; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.15);">
-    <p style="margin-top: 15px; font-size: 1.1rem; color: #ec4899; font-weight: 600;">
-        🐾 Med Vet - Cuidando com amor do seu melhor amigo
-    </p>
-</div>');
-            background-size: cover;
-        }
-    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
     <!-- Navbar -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-paw text-4xl text-emerald-600"></i>
-                    <div>
-                        <h1 class="text-3xl font-bold text-emerald-700">Med Vet</h1>
-                        <p class="text-xs text-emerald-600 -mt-1">Clínica Veterinária</p>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-8 text-lg">
-                    <a href="#" class="hover:text-emerald-600 font-medium transition">Início</a>
-                    <a href="#servicos" class="hover:text-emerald-600 font-medium transition">Serviços</a>
-                    <a href="#sobre" class="hover:text-emerald-600 font-medium transition">Sobre Nós</a>
-                    <a href="#equipe" class="hover:text-emerald-600 font-medium transition">Equipe</a>
-                    <a href="#contato" class="hover:text-emerald-600 font-medium transition">Contato</a>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <a href="tel:11999999999" class="flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-full hover:bg-emerald-700 transition font-medium">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>(11) 99999-9999</span>
-                    </a>
-                    <button onclick="toggleMenu()" class="md:hidden text-2xl">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
+    <nav class="navbar">
+        <div class="nav-content container">
+            <div class="logo">
+                <i class="fa-solid fa-paw"></i>
+                <div>
+                    <h1>Med Vet</h1>
+                    <p>Clínica Veterinária</p>
                 </div>
             </div>
+            
+            <div class="nav-menu">
+                <a href="index.html">Início</a>
+                <a href="serviços.html">Serviços</a>
+                <a href="agendamentos.html">Agendamentos</a>
+                <a href="vendas.html">Promoções</a>
+                <a href="produtos.html">Produtos</a>
+            </div>
+            
+            <a href="agendamentos.html" class="btn btn-primary">
+                <i class="fa-solid fa-calendar"></i> Agendar Consulta
+            </a>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
-        <div class="px-6 py-6 flex flex-col gap-4 text-lg">
-            <a href="#" class="hover:text-emerald-600">Início</a>
-            <a href="#servicos" class="hover:text-emerald-600">Serviços</a>
-            <a href="#sobre" class="hover:text-emerald-600">Sobre Nós</a>
-            <a href="#equipe" class="hover:text-emerald-600">Equipe</a>
-            <a href="#contato" class="hover:text-emerald-600">Contato</a>
-        </div>
-    </div>
-
     <!-- Hero -->
-    <section class="hero h-screen flex items-center text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-5xl md:text-7xl font-bold mb-6">Cuidando com amor<br>do seu melhor amigo</h2>
-            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">Clínica veterinária completa com atendimento humanizado e tecnologia de ponta.</p>
+    <section class="hero">
+        <div class="hero-content container">
+            <h2>Amor, Cuidado e <span style="color:#ec4899;">Especialização</span></h2>
+            <p style="font-size: 1.5rem;">Cuidamos do seu melhor amigo com carinho e tecnologia de ponta.</p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contato" class="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-5 rounded-full text-xl font-semibold transition inline-flex items-center gap-3 justify-center">
-                    <i class="fa-solid fa-calendar"></i>
-                    Agende uma consulta
+            <div class="flex justify-center gap-4 mt-10">
+                <a href="agendamentos.html" class="btn btn-primary text-lg px-10 py-5">
+                    <i class="fa-solid fa-calendar-check"></i> Agendar Agora
                 </a>
-                <a href="tel:11999999999" class="border-2 border-white hover:bg-white hover:text-emerald-800 px-10 py-5 rounded-full text-xl font-semibold transition">
-                    Ligar agora
+                <a href="tel:11999999999" class="btn btn-outline text-lg px-10 py-5">
+                    <i class="fa-solid fa-phone"></i> (11) 99999-9999
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="section">
+        <div class="container">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-4xl font-bold mb-6 text-emerald-700">Bem-vindo à Med Vet</h2>
+                    <h2 class="section-title">Bem-vindo à Med Vet</h2>
                     <p class="text-lg text-gray-600 mb-6">
-                        Há mais de 10 anos cuidando da saúde e bem-estar dos animais de estimação da nossa comunidade. 
-                        Nossa missão é oferecer atendimento veterinário de excelência com carinho e dedicação.
+                        Há mais de 10 anos dedicados ao bem-estar dos pets da nossa comunidade. 
+                        Atendimento humanizado, profissionais qualificados e amor por animais.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex gap-4">
-                            <i class="fa-solid fa-heart text-3xl text-emerald-600 mt-1"></i>
+                            <i class="fa-solid fa-heart text-4xl text-pink-500"></i>
                             <div>
-                                <h4 class="font-semibold">Atendimento Humanizado</h4>
-                                <p class="text-sm text-gray-500">Tratamos cada pet como parte da família</p>
+                                <h4 class="font-semibold">Atendimento com Carinho</h4>
+                                <p class="text-sm">Seu pet é tratado como parte da família</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <i class="fa-solid fa-stethoscope text-3xl text-emerald-600 mt-1"></i>
+                            <i class="fa-solid fa-stethoscope text-4xl text-pink-500"></i>
                             <div>
-                                <h4 class="font-semibold">Profissionais Qualificados</h4>
-                                <p class="text-sm text-gray-500">Veterinários especializados</p>
+                                <h4 class="font-semibold">Veterinários Especializados</h4>
+                                <p class="text-sm">Cuidado de excelência</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="pet-bg h-96 rounded-3xl shadow-2xl"></div>
+                <div class="about-image"></div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-emerald-700">Nossos Serviços</h2>
-                <p class="text-gray-600 mt-3 text-lg">Cuidado completo para seu pet</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card bg-white p-8 rounded-3xl shadow-lg">
-                    <i class="fa-solid fa-syringe text-5xl text-emerald-600 mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-3">Consultas e Vacinação</h3>
-                    <p class="text-gray-600">Consultas clínicas, vacinação, check-up anual e exames preventivos.</p>
-                </div>
-                <div class="service-card bg-white p-8 rounded-3xl shadow-lg">
-                    <i class="fa-solid fa-scissors text-5xl text-emerald-600 mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-3">Cirurgias e Procedimentos</h3>
-                    <p class="text-gray-600">Cirurgias gerais, castração, ortopedia e procedimentos especializados.</p>
-                </div>
-                <div class="service-card bg-white p-8 rounded-3xl shadow-lg">
-                    <i class="fa-solid fa-flask text-5xl text-emerald-600 mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-3">Exames Laboratoriais</h3>
-                    <p class="text-gray-600">Hemograma, bioquímico, ultrassonografia, raio-X e endoscopia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Equipe -->
-    <section id="equipe" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-emerald-700">Nossa Equipe</h2>
-            </div>
+    <!-- Serviços em Destaque -->
+    <section class="section" style="background:#fdf2f8;">
+        <div class="container">
+            <h2 class="section-title">Nossos Principais Serviços</h2>
             
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="text-center">
-                    <div class="w-48 h-48 mx-auto rounded-2xl overflow-hidden shadow-xl mb-6">
-                        <img src="https://picsum.photos/id/64/400/400" alt="Dra. Ana" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-xl">Dra. Ana Beatriz</h4>
-                    <p class="text-emerald-600">Médica Veterinária - Especialista em Clínica Geral</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <h3>Consultas e Check-up</h3>
+                    <p>Atendimento clínico completo</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-48 h-48 mx-auto rounded-2xl overflow-hidden shadow-xl mb-6">
-                        <img src="https://picsum.photos/id/201/400/400" alt="Dr. Lucas" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font
+                <div class="service-card">
+                    <i class="fa-solid fa-syringe"></i>
+                    <h3>Vacinação</h3>
+                    <p>Proteção completa para seu pet</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-flask"></i>
+                    <h3>Exames e Cirurgias</h3>
+                    <p>Laboratório e procedimentos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section text-center" style="background: linear-gradient(135deg, #ec4899, #db2777); color: white;">
+        <div class="container">
+            <h2 class="text-4xl font-bold mb-6">Seu pet merece o melhor cuidado</h2>
+            <a href="agendamentos.html" class="inline-block bg-white text-pink-600 px-12 py-6 rounded-full text-xl font-bold hover:bg-pink-100 transition">
+                Agendar Consulta Agora →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Med Vet Clínica Veterinária - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
