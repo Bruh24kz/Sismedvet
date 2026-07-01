@@ -1,82 +1,163 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilo.css">
-    <title>SisCristóvão - Cadastro de Serviços</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Med Vet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 40px rgba(16, 185, 129, 0.2);
+        }
+        .icon-circle {
+            width: 90px;
+            height: 90px;
+            background-color: #ecfdf5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="clientes.html">Clientes</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="agendamentos.html">Agendamentos</a>
-        <a href="consulta_agendamentos.html">Consulta Agendamentos</a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content container">
+            <div class="logo">
+                <i class="fa-solid fa-paw"></i>
+                <div>
+                    <h1>Med Vet</h1>
+                    <p>Clínica Veterinária</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="index.html">Início</a>
+                <a href="serviços.html">Serviços</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="consultavenda.html">Consulta & Vendas</a>
+            </div>
+            
+            <a href="index.html#contato" class="btn btn-primary">
+                <i class="fa-solid fa-phone"></i> Agendar Agora
+            </a>
+        </div>
     </nav>
 
-    <header class="banner">
-        <h1>Gestão de Serviços</h1>
-        <p>Cadastre e configure o catálogo de assistência técnica do laboratório</p>
-    </header>
-
-    <div class="container">
-        <div class="card">
-            <h2>Novo Serviço</h2>
-            <form action="/salvar-servico" method="POST">
-                <label for="descricao">Descrição do Serviço:</label>
-                <input type="text" id="descricao" name="descricao" placeholder="Ex: Formatação e Instalação de Sistema Operacional" required>
-                
-                <label for="preco">Preço / Custo de Materiais (R$):</label>
-                <input type="number" step="0.01" id="preco" name="preco" placeholder="0.00" required>
-                
-                <label for="tempo_estimado">Tempo Estimado (em horas):</label>
-                <input type="number" id="tempo_estimado" name="tempo_estimado" placeholder="Ex: 2" min="1" required>
-                
-                <button type="submit">Salvar Serviço</button>
-            </form>
-        </div>
-
-        <div class="card" style="margin-top: 20px;">
-            <h2>Serviços Disponíveis</h2>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
-                Catálogo de atividades técnicas executadas pelos alunos no laboratório do São Cristóvão.
+    <!-- Hero -->
+    <section class="hero" style="height: 65vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/1920/1080');">
+        <div class="hero-content container" style="text-align: center;">
+            <h2 style="font-size: 3.8rem;">Nossos Serviços</h2>
+            <p style="font-size: 1.5rem; max-width: 800px; margin: 0 auto;">
+                Atendimento veterinário completo com tecnologia e carinho
             </p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Preço (R$)</th>
-                        <th>Tempo Estimado</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-servicos">
-                    </tbody>
-            </table>
         </div>
+    </section>
+
+    <div class="section container">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- Serviço 1 -->
+            <div class="service-card bg-white p-8 rounded-3xl shadow-xl">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-stethoscope text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4">Consultas Clínicas</h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Consulta geral, check-up anual, vacinação, orientação nutricional e acompanhamento de doenças crônicas.
+                </p>
+                <div class="text-center text-emerald-600 font-semibold">A partir de R$ 120,00</div>
+            </div>
+
+            <!-- Serviço 2 -->
+            <div class="service-card bg-white p-8 rounded-3xl shadow-xl">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-syringe text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4">Vacinação e Preventivos</h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Vacinas V8/V10, antirrábica, vermifugação, antipulgas e controle de carrapatos.
+                </p>
+                <div class="text-center text-emerald-600 font-semibold">Pacotes a partir de R$ 89,90</div>
+            </div>
+
+            <!-- Serviço 3 -->
+            <div class="service-card bg-white p-8 rounded-3xl shadow-xl">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-scissors text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4">Cirurgias</h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Castração, remoção de tumores, cirurgias ortopédicas e procedimentos gerais.
+                </p>
+                <div class="text-center text-emerald-600 font-semibold">Sob consulta</div>
+            </div>
+
+            <!-- Serviço 4 -->
+            <div class="service-card bg-white p-8 rounded-3xl shadow-xl">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-flask text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4">Exames Laboratoriais</h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Hemograma, bioquímico, urina, fezes, ultrassonografia, raio-X e endoscopia.
+                </p>
+                <div class="text-center text-emerald-600 font-semibold">A partir de R$ 45,00</div>
+            </div>
+
+            <!-- Serviço 5 -->
+            <div class="service-card bg-white p-8 rounded-3xl shadow-xl">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-tooth text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4">Odontologia Veterinária</h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Limpeza de tártaro, extrações e tratamento de doenças bucais.
+                </p>
+                <div class="text-center text-emerald-600 font-semibold">A partir de R$ 180,00</div>
+            </div>
+
+            <!-- Serviço 6 -->
+            <div class="service-card bg-white p-8 rounded-3xl shadow-xl">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-house-medical text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4">Atendimento Domiciliar</h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Consultas e procedimentos no conforto da sua casa (raios de até 15km).
+                </p>
+                <div class="text-center text-emerald-600 font-semibold">Sob consulta</div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-20 bg-emerald-700 text-white rounded-3xl p-12 text-center">
+            <h2 class="text-3xl font-bold mb-4">Precisa de atendimento urgente?</h2>
+            <p class="text-xl mb-8">Estamos prontos para cuidar do seu melhor amigo!</p>
+            <a href="index.html#contato" class="inline-block bg-white text-emerald-700 px-10 py-5 rounded-full text-xl font-semibold hover:bg-emerald-100 transition">
+                <i class="fa-solid fa-phone"></i> Ligar Agora: (11) 99999-9999
+            </a>
+        </div>
+
     </div>
 
-    <script>
-        fetch('/listar-servicos')
-            .then(res => res.json())
-            .then(servicos => {
-                const corpoTabela = document.getElementById('lista-servicos');
-                servicos.forEach(s => {
-                    corpoTabela.innerHTML += `
-                        <tr>
-                            <td><strong>${s.descricao}</strong></td>
-                            <td>R$ ${s.preco.toFixed(2)}</td>
-                            <td>${s.tempo_estimado}h</td>
-                        </tr>`;
-                });
-            })
-            .catch(err => console.error("Erro ao listar serviços:", err));
-    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Med Vet Clínica Veterinária - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
-
-<footer class="rodape">
-    <div class="container-rodape">
-        <p>&copy; 2026 SisCristóvão - Sistema de Controle de Serviços</p>
-        <p>Desenvolvido para fins didáticos - Alunos do São Cristóvão</p>
-    </div>
-</footer>
 </html>
