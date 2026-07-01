@@ -1,71 +1,223 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilo.css">
-    <title>SisSenai - Cadastro de Clientes</title>
-</head>
-<body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="clientes.html">Clientes</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="vendas.html">Vendas</a>
-		<a href="consulta_vendas.html">Consulta Vendas</a>
-	</nav>
+/* ====================== STYLE.CSS - MED VET ====================== */
 
-    <header class="banner">
-        <h1>Gestão de Clientes</h1>
-        <p>Cadastre e gerencie sua base de contatos</p>
-    </header>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-    <div class="container">
-        <div class="card">
-            <h2>Novo Cadastro</h2>
-            <form action="/salvar-cliente" method="POST">
-                <input type="text" name="nome" placeholder="Nome do Cliente" required>
-                <input type="text" name="cpf" placeholder="CPF/CNPJ" required>
-                <input type="tel" name="telefone" placeholder="Telefone" required>
-                <button type="submit">Salvar Cliente</button>
-            </form>
-        </div>
+:root {
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --text: #1f2937;
+    --light: #f8fafc;
+}
 
-        <div class="card" style="margin-top: 20px;">
-            <h2>Clientes Cadastrados</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>CPF/CNPJ</th>
-                        <th>Telefone</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-clientes">
-                </tbody>
-            </table>
-        </div>
-    </div>
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <script>
-        fetch('/listar-clientes')
-            .then(res => res.json())
-            .then(clientes => {
-                const corpoTabela = document.getElementById('lista-clientes');
-                clientes.forEach(c => {
-                    corpoTabela.innerHTML += `
-                        <tr>
-                            <td>${c.nome}</td>
-                            <td>${c.cpf}</td>
-                            <td>${c.telefone}</td>
-                        </tr>`;
-                });
-            });
-    </script>
-</body>
-<footer class="rodape">
-    <div class="container-rodape">
-        <p>&copy; 2026 SisSenai - Sistema de Gestão Educacional</p>
-        <p>Desenvolvido para fins didáticos - Unidade SENAI Capanema/PR</p>
-    </div>
-</footer>
-</html>
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: #f8fafc;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 2.8rem;
+    color: var(--primary);
+}
+
+.logo h1 {
+    font-size: 2.1rem;
+    color: var(--primary-dark);
+    line-height: 1;
+}
+
+.logo p {
+    font-size: 0.75rem;
+    color: var(--primary);
+    margin-top: -4px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+    transition: all 0.3s;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.btn {
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: var(--primary-dark);
+}
+
+/* Seções */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+}
+
+/* Cards de Serviços */
+.service-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    text-align: center;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 35px rgba(16, 185, 129, 0.15);
+}
+
+.service-card i {
+    font-size: 3.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+/* Sobre */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-image {
+    height: 480px;
+    background: url('https://picsum.photos/id/237/800/600') center/cover;
+    border-radius: 28px;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Equipe */
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Contato */
+.contact-section {
+    background: linear-gradient(135deg, #10b981, #059669);
