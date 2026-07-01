@@ -1,133 +1,173 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilo.css">
-    <title>SisSenai - Lançar Venda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas - Med Vet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 40px rgba(16, 185, 129, 0.25);
+        }
+        .promo-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ef4444;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="clientes.html">Clientes</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="vendas.html">Vendas</a>
-        <a href="consulta_vendas.html">Consulta Vendas</a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content container">
+            <div class="logo">
+                <i class="fa-solid fa-paw"></i>
+                <div>
+                    <h1>Med Vet</h1>
+                    <p>Clínica Veterinária</p>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="index.html">Início</a>
+                <a href="serviços.html">Serviços</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="vendas.html">Promoções</a>
+                <a href="consultavenda.html">Consulta</a>
+            </div>
+            
+            <a href="index.html#contato" class="btn btn-primary">
+                <i class="fa-solid fa-phone"></i> Contato
+            </a>
+        </div>
     </nav>
 
-    <header class="banner">
-        <h1>Controle de Vendas</h1>
-        <p>Cadastre novas vendas no sistema</p>
-    </header>
+    <!-- Hero -->
+    <section class="hero" style="height: 65vh; background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://picsum.photos/id/1015/1920/1080');">
+        <div class="hero-content container" style="text-align: center;">
+            <h2 style="font-size: 3.8rem; margin-bottom: 1rem;">Ofertas e Promoções</h2>
+            <p style="font-size: 1.6rem;">Aproveite descontos especiais para cuidar melhor do seu pet!</p>
+            <div class="mt-6 inline-flex items-center gap-2 bg-white text-emerald-700 px-6 py-3 rounded-full font-semibold">
+                <i class="fa-solid fa-fire"></i> Válido até 31/07/2026
+            </div>
+        </div>
+    </section>
 
-    <div class="container">
-        <div style="margin-bottom: 20px;">
-            <button onclick="window.location.href='consulta_vendas.html'" style="background: #555; width: auto; padding: 10px 20px;">
-                🔍 Ver Histórico e Detalhes de Vendas
-            </button>
+    <div class="section container">
+
+        <h2 class="section-title text-4xl mb-4">Produtos em Promoção</h2>
+        <p class="text-center text-gray-600 mb-12">Descontos imperdíveis para sua família pet</p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+            <!-- Produto 1 -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg relative">
+                <div class="promo-badge">-25%</div>
+                <img src="https://picsum.photos/id/237/400/300" alt="Ração" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl">Ração Premium Adulto</h3>
+                    <p class="text-emerald-600">Cães • 15kg</p>
+                    <div class="flex items-center gap-3 mt-4">
+                        <span class="text-3xl font-bold text-emerald-700">R$ 142,40</span>
+                        <span class="line-through text-gray-400">R$ 189,90</span>
+                    </div>
+                    <button onclick="comprarAgora(this)" class="mt-6 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg relative">
+                <div class="promo-badge">-30%</div>
+                <img src="https://picsum.photos/id/669/400/300" alt="Antipulgas" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl">Frontline Plus Gatos</h3>
+                    <p class="text-emerald-600">3 doses</p>
+                    <div class="flex items-center gap-3 mt-4">
+                        <span class="text-3xl font-bold text-emerald-700">R$ 62,90</span>
+                        <span class="line-through text-gray-400">R$ 89,90</span>
+                    </div>
+                    <button onclick="comprarAgora(this)" class="mt-6 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg relative">
+                <div class="promo-badge">-20%</div>
+                <img src="https://picsum.photos/id/201/400/300" alt="Shampoo" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl">Shampoo Hipoalergênico</h3>
+                    <p class="text-emerald-600">500ml</p>
+                    <div class="flex items-center gap-3 mt-4">
+                        <span class="text-3xl font-bold text-emerald-700">R$ 36,70</span>
+                        <span class="line-through text-gray-400">R$ 45,90</span>
+                    </div>
+                    <button onclick="comprarAgora(this)" class="mt-6 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg relative">
+                <div class="promo-badge">-15%</div>
+                <img src="https://picsum.photos/id/1015/400/300" alt="Brinquedos" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl">Kit Brinquedos Interativos</h3>
+                    <p class="text-emerald-600">3 peças</p>
+                    <div class="flex items-center gap-3 mt-4">
+                        <span class="text-3xl font-bold text-emerald-700">R$ 67,90</span>
+                        <span class="line-through text-gray-400">R$ 79,90</span>
+                    </div>
+                    <button onclick="comprarAgora(this)" class="mt-6 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h2>Nova Venda / Orçamento</h2>
-
-            <label>Cliente:</label>
-            <select id="selCliente">
-                <option value="">Selecione o Cliente...</option>
-            </select>
-
-            <label>Produto:</label>
-            <select id="selProduto">
-                <option value="">Selecione o Produto...</option>
-            </select>
-
-            <label>Quantidade:</label>
-            <input type="number" id="inpQtd" value="1" min="1">
-
-            <button onclick="adicionarItem()">Adicionar Item</button>
-
-            <table id="tabelaItens">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Qtd</th>
-                        <th>Preço Unit.</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-
-            <h3 id="txtTotal">Total: R$ 0,00</h3>
-            <button onclick="finalizarVenda()" style="background: green;">Finalizar Venda</button>
+        <!-- Banner de Frete -->
+        <div class="mt-16 bg-emerald-100 border border-emerald-300 rounded-3xl p-10 text-center">
+            <h3 class="text-2xl font-bold text-emerald-800">🚚 Frete Grátis</h3>
+            <p class="text-emerald-700 mt-2">Em compras acima de R$ 250,00 na região de São Paulo</p>
         </div>
+
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Med Vet Clínica Veterinária - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
     <script>
-        let carrinho = [];
-        let totalGeral = 0;
-        window.listaProdutos = [];
-
-        window.onload = () => {
-            fetch('/listar-clientes').then(res => res.json()).then(data => {
-                const selC = document.getElementById('selCliente');
-                data.forEach(c => selC.innerHTML += `<option value="${c.id}">${c.nome}</option>`);
-            });
-
-            fetch('/listar-produtos').then(res => res.json()).then(data => {
-                window.listaProdutos = data;
-                const selP = document.getElementById('selProduto');
-                data.forEach(p => selP.innerHTML += `<option value="${p.id}">${p.descricao} - R$ ${p.preco.toFixed(2)}</option>`);
-            });
-        };
-
-        function adicionarItem() {
-            const pId = parseInt(document.getElementById('selProduto').value);
-            const qtd = parseInt(document.getElementById('inpQtd').value);
-            const produto = window.listaProdutos.find(p => p.id === pId);
-
-            if (produto) {
-                const subtotal = produto.preco * qtd;
-                carrinho.push({ id: produto.id, desc: produto.descricao, preco: produto.preco, qtd: qtd });
-                totalGeral += subtotal;
-                atualizarGrade();
-            } else {
-                alert("Selecione um produto!");
-            }
-        }
-
-        function atualizarGrade() {
-            const corpo = document.querySelector('#tabelaItens tbody');
-            corpo.innerHTML = "";
-            carrinho.forEach(item => {
-                corpo.innerHTML += `<tr><td>${item.desc}</td><td>${item.qtd}</td><td>R$ ${item.preco.toFixed(2)}</td><td>R$ ${(item.qtd * item.preco).toFixed(2)}</td></tr>`;
-            });
-            document.getElementById('txtTotal').innerText = `Total: R$ ${totalGeral.toFixed(2)}`;
-        }
-
-        function finalizarVenda() {
-            const cId = document.getElementById('selCliente').value;
-            if (!cId || carrinho.length === 0) return alert("Selecione cliente e itens!");
-
-            const dadosVenda = { cliente_id: cId, total: totalGeral, itens: carrinho };
-
-            fetch('/finalizar-venda', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dadosVenda)
-            })
-                .then(res => res.json())
-                .then(resposta => {
-                    if (resposta.success) {
-                        alert('Venda registrada com sucesso!');
-                        window.location.href = 'consulta_vendas.html'; // Vai direto para a consulta após vender
-                    }
-                });
+        function comprarAgora(btn) {
+            btn.innerHTML = '✅ Adicionado ao Carrinho!';
+            btn.style.backgroundColor = '#10b981';
+            
+            setTimeout(() => {
+                alert('🎉 Produto adicionado com sucesso!\n\nVocê será redirecionado para o carrinho em breve.');
+                btn.innerHTML = 'Comprar Agora';
+                btn.style.backgroundColor = '';
+            }, 1500);
         }
     </script>
 </body>
-<footer class="rodape">
-    <div class="container-rodape">
-        <p>&copy; 2026 SisSenai - Sistema de Gestão Educacional</p>
-        <p>Desenvolvido para fins didáticos - Unidade SENAI Capanema/PR</p>
-    </div>
-</footer>
 </html>
