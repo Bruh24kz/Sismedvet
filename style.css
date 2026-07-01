@@ -1,12 +1,13 @@
-/* ====================== STYLE.CSS - MED VET ====================== */
+/* ====================== STYLE.CSS - MED VET (TEMA ROSA) ====================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary: #10b981;
-    --primary-dark: #059669;
+    --primary: #ec4899;      /* Rosa principal */
+    --primary-dark: #db2777; /* Rosa escuro */
+    --accent: #f472b6;       /* Rosa claro */
     --text: #1f2937;
-    --light: #f8fafc;
+    --light: #fdf2f8;
 }
 
 /* Reset e Configurações Gerais */
@@ -20,7 +21,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text);
-    background-color: #f8fafc;
+    background-color: #fdf2f8;
 }
 
 h1, h2, h3, h4 {
@@ -162,8 +163,8 @@ a {
     margin-bottom: 4rem;
 }
 
-/* Cards de Serviços */
-.service-card {
+/* Cards */
+.service-card, .product-card {
     background: white;
     padding: 2.5rem 2rem;
     border-radius: 24px;
@@ -173,30 +174,18 @@ a {
     height: 100%;
 }
 
-.service-card:hover {
+.service-card:hover, .product-card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 20px 35px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 20px 35px rgba(236, 72, 153, 0.15);
 }
 
-.service-card i {
+.service-card i, .product-card i {
     font-size: 3.5rem;
     color: var(--primary);
     margin-bottom: 1.5rem;
 }
 
-.service-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-
 /* Sobre */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-}
-
 .about-image {
     height: 480px;
     background: url('https://picsum.photos/id/237/800/600') center/cover;
@@ -204,20 +193,39 @@ a {
     box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Equipe */
-.team-member {
+/* Formulários */
+input, select, textarea {
+    border: 2px solid #f9a8d4;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #831843;
+    color: #fbcfe8;
     text-align: center;
+    padding: 3rem 0;
 }
 
-.team-member img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 20px;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section {
+        padding: 70px 0;
+    }
 }
-
-/* Contato */
-.contact-section {
-    background: linear-gradient(135deg, #10b981, #059669);
